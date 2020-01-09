@@ -30,12 +30,14 @@ to the overall corpse.
 
 * what troubles one has with these girls without their mother!	
 
-each file that constitute to the overall corpus is handled on its own, the most difficult or tricky part is the parsing part, how to differentiate between tokens?
+## Algorithm description
+
+each file that constitutes to the overall corpus is handled on its own, the most difficult or tricky part is the parsing part, how to differentiate between tokens?
 the rules that were followed in parsing the text by using regular expression are as following:
-** first n-1 start tags are added to the start of every new sentence.
-** apostrophes are handled on their own so that words like don't or won't will be handled properly
-** all types of brackets are discarded as there could appear a "(" in the generated sentences without its matching bracket
-** any kind of weird chars (uncommon chars) are discarded.
+* first n-1 start tags are added to the start of every new sentence.
+* apostrophes are handled on their own so that words like don't or won't will be handled properly
+* all types of brackets are discarded as there could appear a "(" in the generated sentences without its matching bracket
+* any kind of weird chars (uncommon chars) are discarded.
 
 then calculating the probability of the next coming word is easy as we maintain two hash tables one for the frequency last n-1 tokens and every other word that follows
 and another one is for only the frequency of the last n-1 words
